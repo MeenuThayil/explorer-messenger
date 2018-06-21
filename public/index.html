@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    <title>explorer | messenger</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href="/css/main.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOLYwT1wlsK9HnJi2pGM4IK22VTdzMceU&callback=initMap"
+  async defer></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/chat.js"></script>
+  
+  <!-- Google Maps Initiation Element -->
+  <div class="MapComponent">
+    <div id="map"></div>
+  </div>
+
+  <!-- Root Configuration Header -->
+  <div class="Header">
+    <div id="logoWrapper" onclick="gpsToggleHandler()">
+      <div id="logoInnerGlow"></div>
+      <img id="logo" src="http://pluspng.com/img-png/circle-png-circle-png-hd-1600.png">
+    </div>
+    <div class="HeaderInputs">
+      <input id="aliasInput" placeholder="anonymous" class="TextInput HalfInput" autocomplete="off" onchange="handleAliasChange()"/>
+      <input id="channelInput" placeholder="root channel" class="TextInput HalfInput" autocomplete="off" onchange="handleChannelChange()"/>
+    </div>
+  </div>
+
+  <!-- Chat Module -->
+  <div class="ChatComponent">
+    <div id="messageLog" class="Log"></div>
+    <div class="InputConsole">
+      <form id="chatInputForm" onsubmit="return handleInputFormSubmit()">
+        <input id="messageInput" name="message" class="TextInput" autocomplete="off"/>
+        <button id="sendMessage" class="ConfirmButton">send</button>
+      </form>
+    </div>
+    
+  </div>
+
+</body>
+</html>

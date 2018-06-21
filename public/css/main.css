@@ -1,0 +1,230 @@
+/* Config starts */
+:root {
+  /* Color Palette */
+  /* standardize colors here */
+
+  /* Color Config */
+  --header-bg-color: #EEEEEE;
+  --header-text-color: #252525;
+  --console-bg-color: #CCCCCC;
+  --console-log-bg-color: #EEEEEE;
+  --console-input-bg-color: #FFFFFF;
+  --console-input-message-bg-color: #FFFFFF;
+  --console-input-message-text-color: #000000;
+  --console-input-button-bg-color: #666666;
+  --console-input-button-text-color: #000000;
+  --console-input-button-confirm-bg-color: #33DD33;
+  --console-input-button-confirm-text-color: #000000;
+
+  /* Unit Config */
+  --header-height: 80px;
+  --header-padding: calc(var(--header-height) / 8);
+  --console-width: 300px;
+  --console-input-height: var(--header-height);
+  --console-input-button-width: calc(var(--header-height) - 2 * var(--header-padding));
+  --console-input-button-margin: var(--header-padding);
+  --message-frame-margin: var(--header-padding);
+  --message-timestamp-height: var(--message-frame-margin);
+  --message-text-height: 14px;
+}
+
+/* Typography */
+/* standardize fontface here */
+
+/* Config ends */
+
+/* Map component starts */
+.MapComponent {
+  position: absolute; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  left: var(--console-width);
+}
+/* Map component ends */
+
+/* Chat component starts */
+.Header {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  height: var(--header-height);
+  width: var(--console-width);
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+}
+
+.HeaderInputs {
+  position: absolute;
+  left: calc(var(--header-height));
+  right: 0;
+  height: 100%;
+}
+
+.HeaderInputs .TextInput {
+  text-align: center;
+}
+
+#logoWrapper{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: var(--header-padding);
+  background-color: #F9F9F9;
+  height: calc(var(--header-height) - 2 * var(--header-padding));
+  width: calc(var(--header-height) - 2 * var(--header-padding));
+}
+
+#logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: var(--header-padding);
+  
+  height: calc(var(--header-height) - 2 * var(--header-padding));
+  width: calc(var(--header-height) - 2 * var(--header-padding));
+}
+
+#logoWrapper:hover {
+  cursor: pointer;
+}
+
+#logoInnerGlow {
+  position: absolute;
+  height: calc(var(--header-height) - 2 * var(--header-padding));
+  width: calc(var(--header-height) - 2 * var(--header-padding));
+  border-radius: 50%;
+  
+  display: normal;
+}
+
+#logoWrapper:hover #logoInnerGlow {
+  display: block;
+  background-color: var(--console-input-button-confirm-bg-color);
+}
+
+#channelInput {
+  right: 0;
+}
+
+.ChatComponent {
+  position: absolute; 
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: var(--console-width);
+  background-color: var(--console-bg-color);
+}
+
+.Log{
+  position: absolute;
+  width: var(--console-width);
+  box-sizing: border-box;
+  top: 0;
+  bottom: var(--console-input-height); 
+  background-color: var(--console-log-bg-color);
+  overflow: scroll;
+}
+
+.MessageFrame {
+  position: relative;
+  margin: var(--message-frame-margin);
+  padding: var(--message-frame-margin);
+  width: calc(100% - var(--message-frame-margin) * 2);
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  border-radius: var(--message-frame-margin);
+}
+
+.MessageHeader {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 10px;
+  box-sizing: border-box;
+}
+
+.MessageTimestamp {
+  position: absolute;
+  right: 0;
+  font-size: var(--message-timestamp-height);
+  color: #AAAAAA;
+}
+
+.MessageAuthor {
+  position: absolute;
+  left: 0;
+  font-size: calc(var(--message-timestamp-height) + 1px);
+  color: #AAAAAA;
+}
+
+.MessageText {
+  position: relative;
+  margin-top: var(--message-frame-margin);
+  font-size: var(--message-text-height);
+}
+
+.InputConsole {
+  background-color: var(--console-input-bg-color);
+  position: absolute;
+  bottom: 0;
+  height: var(--console-input-height);
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.TextInput {
+  position: absolute;
+  display: block;
+  height: var(--console-input-height);
+  width: calc(var(--console-width) - var(--console-input-button-width) - 2 * var(--console-input-button-margin));
+  box-sizing: border-box;
+  background-color: var(--console-input-message-bg-color);
+  color: var(--console-input-message-text-color);
+  padding: 20px;
+}
+
+.HalfInput {
+  width: 50%;
+}
+
+#messageInput {
+  font-size: 20px;
+}
+
+#messageLog {
+  left: 0;
+}
+
+.ConfirmButton {
+  position: absolute;
+  width: var(--console-input-button-width);
+  height: var(--console-input-button-width);
+  border-radius: calc(var(--console-input-button-width) / 2);
+  margin: var(--console-input-button-margin);
+  right: 0;
+  bottom: 0;
+  background-color: var(--console-input-button-confirm-bg-color);
+  color: var(--console-input-button-confirm-text-color);
+}
+
+/* Chat component ends */
+
+/* Google Maps CSS */
+/* Following: https://developers.google.com/maps/documentation/javascript/tutorial */
+/* Always set the map height explicitly to define the size of the div
+  * element that contains the map. */
+  #map {
+  height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
