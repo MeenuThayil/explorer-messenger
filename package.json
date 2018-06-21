@@ -4,7 +4,7 @@
   "description": "explorer application message broker",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"TODO: add tests\" && exit 0"
   },
   "author": "",
   "license": "MIT",
