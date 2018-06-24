@@ -4,12 +4,25 @@
   "description": "explorer application message broker",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"TODO: add tests\" && exit 0"
+    "start": "node server/index.js",
+    "test": "jest",
+    "lint": "./node_modules/.bin/eslint **/*.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "latest",
-    "socket.io": "latest"
+    "express": "^4.16.3",
+    "express-winston": "^2.5.1",
+    "socket.io": "^2.1.1",
+    "winston": "^2.4.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-jest": "^21.17.0",
+    "jest": "^23.1.0",
+    "superagent": "^3.8.3",
+    "supertest": "^3.1.0"
   }
 }
